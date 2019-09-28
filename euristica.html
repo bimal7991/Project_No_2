@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>EURISTICA 2019</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="IIT Indore's Technical Fest." >
+	<meta name="keywords" content="IIT, indore, iiti, coding, fest, festival, technical" >
+	<!-- fonts -->
+	<link rel="stylesheet" href="assets/fonts/Blanka-Regular/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+	<!-- jquery-modal -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<!-- custom -->
+	<link rel="stylesheet" href="build/css/main.css" />
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- theme color -->
+	<meta name="theme-color" content="#190729" />
+	<link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
+</head>
+
+<body v-cloak>
+
+	<!-- Header -->
+	<header id="header" class="alt">
+		<video poster="images/final4.png" muted autoplay loop no-controls style="min-height:110vh;min-width:110vw;">
+			<source src="images/final4.mp4" type="video/mp4">
+		</video>
+
+		<div class="inner">
+			<div class="arcesium">
+				<img src="images/arcesium.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Presents
+			</div>
+			<h1>{{title}}</h1>
+			<p>{{subtitle}}</p>
+			<h2>
+				Prizes worth 300K
+			</h2>
+		</div>
+		<div class="footer">
+			<a href='javascript:void($(window).scrollTo("#intro",500))' class="no-border">
+				<i class="fa fa-angle-down scroll-arrow"></i>
+			</a>
+		</div>
+	</header>
+	<!-- Banner -->
+	<section id="intro" class="intro main about">
+		<div class="cover">
+			<!-- <span class="icon fas fa-diamond major"></span> -->
+			<p>{{subtitle}}</p>
+			<a href="http://eepurl.com/ggAO-L" class="button white" target="_blank">Register Now</a>
+		</div>
+		<div class="footer">
+			<a href='javascript:void($(window).scrollTo("#wrapper",500))' class="no-border white">
+				<i class="fa fa-angle-down scroll-arrow"></i>
+			</a>
+		</div>
+	</section>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<h2 style="text-align:center">EVENTS</h2>
+		<hr>
+		<!-- Items -->
+		<section id="events" class="main items">
+
+			<article @click="modal(i)" class="item" v-for="(item,i) in list">
+
+				<header>
+					<div class="overlay">
+						<p>
+							{{item.about}}
+							<br>
+							<br>
+							<div class="ctkm">
+								<i>
+									Click to know more
+								</i>
+							</div>
+						</p>
+					</div>
+					<img style="width:100%;" :data-src='item.src' alt="" />
+				</header>
+				<p>
+					<h3>{{item.title}}</h3>
+
+					{{item.content}}
+					<br>
+					<i class="fa fa-clock-o">
+					</i> {{item.dt}}
+				</p>
+				<div :id="'modal'+i" class="modal">
+					<h2>
+						{{item.title}}
+					</h2>
+					<p v-html="item.longContent"></p>
+				</div>
+			</article>
+
+		</section>
+
+		<!-- Banner -->
+		<section id="sponsors" class="main intro">
+			<!--[> <span class="icon fa-diamond major"></span> <]-->
+			<h2>Sponsored By</h2>
+			<hr>
+			<div class="sponsors-container">
+				<div class="sponsor">
+					<h4>TITLE SPONSOR</h4>
+					<a href="https://www.arcesium.com/" target="_blank">
+						<img class="title-spons" src="images/arcesium.png" alt="">
+					</a>
+					<div>
+						follow to stay posted regarding open positions.
+						<a href="https://www.facebook.com/arcesium/" target="_blank" class="icon icon-sponsor fa-facebook-square"><span class="label"></span></a>
+						<a href="https://www.linkedin.com/company/arcesium/?originalSubdomain=in" target="_blank" class="icon icon-sponsor fa-linkedin-square"><span class="label"></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="sponsor-container">
+				<div class="sponsor">
+					<h4>PLATFORM SPONSORS</h4>
+				</div>
+			</div>
+			<div class="sponsors-container">
+				<div class="sponsor" style="transform: translateY(5%) !important;">
+					<a href="https://hackerearth.com" target="_blank">
+						<img data-src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/logo/HE_logo.svg" class="small-image"
+						 alt="">
+					</a>
+				</div>
+				<div class="sponsor " style="transform: translateY(-15%) !important;">
+					<a href="https://codechef.com" target="_blank">
+						<img class="platform-spons" data-src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.png" class="small-image"
+						 alt="">
+					</a>
+				</div>
+				<div class="sponsor ">
+					<a href="http://codeforces.com" target="_blank">
+						<img class="platform-spons" data-src="https://st.codeforces.com/s/71703/images/codeforces-logo-with-telegram.png" class="small-image" alt="">
+					</a>
+				</div>
+				<div class="sponsor ">
+					<a href="https://hackerrank.com" target="_blank">
+						<img class="platform-spons" data-src="https://hrcdn.net/hackerrank/assets/brand/hr_logo_new_word-52db4dcdc76b31be86456c77b55a7396.png"
+						 class="small-image" alt="">
+					</a>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<h2>
+				Contact Us
+			</h2>
+			<hr>
+			<div class="contact">
+				<div>
+
+					<b>Overall Coordinators</b>
+					<ul>
+						<li>
+							Kanishkar J (
+							<a href="tel:+919902847087">+919902847087</a>)
+						</li>
+						<li>
+							Kumar Abhinav (
+							<a href="tel:+918851096873">+918851096873</a>)
+						</li>
+					</ul>
+					<b>Support</b>
+					<ul>
+						<li>
+							<a href="https://reddit.com/r/Euristica19" target="_blank">r/Euristica19</a>
+						</li>
+					</ul>
+
+				</div>
+				<div>
+					<b>Social</b>
+					<div v-for="item in list">
+						<a :href="item.link" :class="item.class" target="_blank">
+							<span class="label"> {{item.tag}}</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- <p class="copyright">
+				<a href="https://pclubiiti.github.io">
+					&copy; {{subtitle}}
+				</a>
+			</p> -->
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.min.js"></script>
+	<script src="build/js/indexData.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<!-- scroll to -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+	<!-- google analytics -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-115888763-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+
+</html>

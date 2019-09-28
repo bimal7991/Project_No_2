@@ -1,0 +1,61 @@
+
+<!DOCTYPE>
+<html>
+<head>
+<style>
+   body {
+                background-image: url("img1.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                 background-size:cover
+   }
+    .LOGIN{
+           margin:auto;
+          width:320px;
+          background: rgba(0,0,0,0.5);
+          color:#fff;
+          padding:20px 20px;
+          margin:40px,50px;   
+          
+  }
+
+   .avatar{
+        margin:100px;
+        width:100px;
+        height:100px;
+        border-radius:50%;   
+        margin-top:-30px;
+       
+}
+     input[type=text],input[type=password] {
+     border:none;
+     outline:none;
+     border:2px  #fff dotted;
+     background:transparent;
+     border-radius:20px;
+     box-sizing:border-box;
+     color:#fff;
+     font-size:16px;
+     padding:10px;
+     text-align:center;
+   
+}
+ </style>
+ </head>
+ <body>
+ <div class="LOGIN ",style="font-size:40px">
+  <img src="avatar.png" class="avatar">
+     <h1 style="color:#fff;font-size:60px;text-align:center;margin-top:-30px"> Login <h1>
+ <form action="login_check.php" method="post" >
+        username :<input  type="text" name="b1" required style="color:white" ><br>
+        password:<input type="password" name="b2" required style="color:white"><br><br>
+      
+       
+         <input type="submit" value="login" name="submit" style="font-size: 20px;color:blue" ><br></form>
+<form action="open.php" method="GET">
+            <div style="text-align:left">
+            <input type="submit" value="back" style="font-size: 20px;color:red">
+  </form>
+ </body>
+</html>
+
